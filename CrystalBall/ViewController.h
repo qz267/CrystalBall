@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 - (IBAction)buttonPressed:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *predictionLabel;
+@property (strong, nonatomic) IBOutlet UILabel *predictionLabel;
+@property (strong, nonatomic) NSArray *myArrary;
 
 @end

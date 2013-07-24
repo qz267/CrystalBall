@@ -13,11 +13,14 @@
 @end
 
 @implementation ViewController
+@synthesize predictionLabel;
+@synthesize myArrary;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.myArrary = [[NSArray alloc] initWithObjects:@"Apple", @"Orange", @"Banana", @"Plum", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -30,6 +33,8 @@
 //    NSLog(@"button pressed");
     NSString *myString = @"hahahaha";
     [myString uppercaseString];
+    
+//    NSArray *myArrary =[[NSArray alloc initWithObjects:@"Apple", @"Orange", @"Banana", @"Plum", nil];
     self.predictionLabel.text = @"OH YEATH";
 }
 @end
