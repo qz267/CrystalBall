@@ -12,6 +12,7 @@
 //- (IBAction)buttonPressed:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *predictionLabel;
 @property (strong, nonatomic) NSArray *myArrary;
+@property (strong, nonatomic) UIImageView *imageView;
 
 -(void) makePrediction;
 

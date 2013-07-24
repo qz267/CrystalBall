@@ -15,6 +15,7 @@
 @implementation ViewController
 @synthesize predictionLabel;
 @synthesize myArrary;
+@synthesize imageView;
 
 - (void)viewDidLoad
 {
@@ -22,8 +23,38 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     UIImage *image = [UIImage imageNamed:@"background.png"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    [self.view insertSubview:imageView atIndex:0];
+    self.imageView = [[UIImageView alloc] initWithImage:image];
+    [self.view insertSubview:self.imageView atIndex:0];
+    
+    self.imageView.animationImages = [[NSArray alloc] initWithObjects:
+                                      [UIImage imageNamed:@"cball00001.png"],
+                                      [UIImage imageNamed:@"cball00002.png"],
+                                      [UIImage imageNamed:@"cball00003.png"],
+                                      [UIImage imageNamed:@"cball00004.png"],
+                                      [UIImage imageNamed:@"cball00005.png"],
+                                      [UIImage imageNamed:@"cball00006.png"],
+                                      [UIImage imageNamed:@"cball00007.png"],
+                                      [UIImage imageNamed:@"cball00008.png"],
+                                      [UIImage imageNamed:@"cball00009.png"],
+                                      [UIImage imageNamed:@"cball00010.png"],
+                                      [UIImage imageNamed:@"cball00011.png"],
+                                      [UIImage imageNamed:@"cball00012.png"],
+                                      [UIImage imageNamed:@"cball00013.png"],
+                                      [UIImage imageNamed:@"cball00014.png"],
+                                      [UIImage imageNamed:@"cball00015.png"],
+                                      [UIImage imageNamed:@"cball00016.png"],
+                                      [UIImage imageNamed:@"cball00017.png"],
+                                      [UIImage imageNamed:@"cball00018.png"],
+                                      [UIImage imageNamed:@"cball00019.png"],
+                                      [UIImage imageNamed:@"cball00020.png"],
+                                      [UIImage imageNamed:@"cball00021.png"],
+                                      [UIImage imageNamed:@"cball00022.png"],
+                                      [UIImage imageNamed:@"cball00023.png"],
+                                      [UIImage imageNamed:@"cball00024.png"],
+                                      nil];
+    
+    self.imageView.animationDuration = 1.0;
+    self.imageView.animationRepeatCount = 1;
     
     self.myArrary = [[NSArray alloc] initWithObjects:@"Apple", @"Orange", @"Banana", @"Plum", nil];
 }
@@ -49,6 +80,7 @@
 - (void) makePrediction{
     NSInteger index = arc4random_uniform(self.myArrary.count);
     self.predictionLabel.text = [self.myArrary objectAtIndex:index];
+    [self.imageView startAnimating];
 }
 
 
