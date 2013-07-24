@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-- (IBAction)buttonPressed:(id)sender;
+//- (IBAction)buttonPressed:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *predictionLabel;
 @property (strong, nonatomic) NSArray *myArrary;
+
+-(void) makePrediction;
 
 @end

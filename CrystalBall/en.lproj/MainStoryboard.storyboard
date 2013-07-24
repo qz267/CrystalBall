@@ -21,30 +21,11 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqc-sf-FTE">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="cDN-vB-rfU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="button_bg_off.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted" image="button_bg_on.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="Mg2-O1-Mvl"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Fqc-sf-FTE" secondAttribute="bottom" constant="30" id="FX9-bT-Ald"/>
-                            <constraint firstItem="Fqc-sf-FTE" firstAttribute="leading" secondItem="Lwl-cg-I7I" secondAttribute="leading" type="default" id="Y6F-V8-KEB"/>
                             <constraint firstItem="Lwl-cg-I7I" firstAttribute="top" secondItem="3" secondAttribute="top" constant="209" id="hnP-0x-Vmg"/>
                             <constraint firstItem="Lwl-cg-I7I" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="38" id="m1X-lX-YJl"/>
-                            <constraint firstItem="Lwl-cg-I7I" firstAttribute="trailing" secondItem="Fqc-sf-FTE" secondAttribute="trailing" type="default" id="xfi-TO-ypd"/>
                         </constraints>
                     </view>
                     <connections>
@@ -55,10 +36,6 @@
             </objects>
         </scene>
     </scenes>
-    <resources>
-        <image name="button_bg_off.png" width="280" height="42"/>
-        <image name="button_bg_on.png" width="280" height="42"/>
-    </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -66,7 +43,6 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
-                <relationship kind="action" name="buttonPressed:"/>
                 <relationship kind="outlet" name="predictionLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
