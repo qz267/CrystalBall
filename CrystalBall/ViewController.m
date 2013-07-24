@@ -81,6 +81,9 @@
     NSInteger index = arc4random_uniform(self.myArrary.count);
     self.predictionLabel.text = [self.myArrary objectAtIndex:index];
     [self.imageView startAnimating];
+    [UIView animateWithDuration:2.0 animations:^{
+        [self.predictionLabel setAlpha:1.0];
+    }];
 }
 
 
@@ -90,7 +93,9 @@
 
 - (void) motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
     NSLog(@"motion began");
-    self.predictionLabel.text = @"";
+    self.predictionLabel.text = nil;
+//    self.predictionLabel.text
+    [self.predictionLabel setAlpha:0.0];
 }
 
 - (void) motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event{
@@ -104,7 +109,8 @@
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    self.predictionLabel.text = @"";
+    self.predictionLabel.text = nil;
+    [self.predictionLabel setAlpha:0.0];
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
