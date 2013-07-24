@@ -20,6 +20,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    UIImage *image = [UIImage imageNamed:@"background.png"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    [self.view insertSubview:imageView atIndex:0];
+    
     self.myArrary = [[NSArray alloc] initWithObjects:@"Apple", @"Orange", @"Banana", @"Plum", nil];
 }
 
@@ -31,10 +36,29 @@
 
 - (IBAction)buttonPressed:(id)sender {
 //    NSLog(@"button pressed");
-    NSString *myString = @"hahahaha";
-    [myString uppercaseString];
+//    NSString *myString = @"hahahaha";
+//    [myString uppercaseString];
+    
     
 //    NSArray *myArrary =[[NSArray alloc initWithObjects:@"Apple", @"Orange", @"Banana", @"Plum", nil];
-    self.predictionLabel.text = @"OH YEATH";
+    NSInteger index = arc4random_uniform(self.myArrary.count);
+    self.predictionLabel.text = [self.myArrary objectAtIndex:index];
 }
+
+- (void) motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+    NSLog(@"motion began");
+    self.predictionLabel.text = @"";
+}
+
+- (void) motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+    if (motion == UIEventSubtypeMotionShake) {
+        NSInteger index = arc4random_uniform(self.myArrary.count);
+        self.predictionLabel.text = [self.myArrary objectAtIndex:index];
+    }
+}
+
+- (void) motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+    
+}
+
 @end
